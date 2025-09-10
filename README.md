@@ -20,4 +20,7 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 ## Template Data
 
-Initially, this project will use mock data from `/src/data/mock-data.ts`. In order to use real candidate data, create an `.env` file in the project root and set the `NEXT_PUBLIC_USE_REAL_DATA` environment variable to `true`.
+Initially, this project will use mock data from `/src/data/mock-data.ts`. In order to use real candidate data:
+
+1. Create an `.env` file in the project root and set the `NEXT_PUBLIC_USE_REAL_DATA` environment variable to `true`.
+2. Create a file called `candidate-data.ts` in `src/data`. Use `mock-data.ts` as a template.
