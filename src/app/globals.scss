@@ -1,0 +1,75 @@
+@use "../sass/colors";
+@use "../sass/typography";
+@use "../sass/layout";
+@use "../sass/functions";
+@use "sass:color";
+
+:root {
+  // Colors
+  --light-link-blue-1: hsl(200, 70%, 54%);
+  --light-link-blue-2: hsl(200, 70%, 68%);
+  --color-1: #{colors.$color-1};
+  --color-1-dark: #{colors.$color-1-dark};
+  --color-2: #{colors.$color-2};
+  --color-2-dark: #{colors.$color-2-dark};
+  --color-3: #{colors.$color-3};
+  --color-3-dark: #{colors.$color-3-dark};
+  --color-4: #{colors.$color-4};
+  --color-4-dark: #{colors.$color-4-dark};
+  --color-5: #{colors.$color-5};
+  --color-5-dark: #{colors.$color-5-dark};
+  --color-6: #{colors.$color-6};
+  --blue: #1976d2;
+  --dark-blue: #004ba0;
+  --light-blue: #63a4ff;
+  --white: hsl(0, 0%, 100%);
+  --gray: #a3a3a3;
+  --light-gray: #d4d4d4;
+  --dark-gray: #525252;
+  --border-light-gray: #dfdfdf;
+  --black: hsl(0, 0%, 11%);
+  --text-black: #{colors.$color-5};
+
+  // Misc.
+  --border-radius-1: 3px;
+  --box-shadow-1: 2px 2px 5px 1px #{color.scale(
+      colors.$color-5,
+      $lightness: 80%
+    )};
+  --container-width-1: 1100px;
+
+  // Spacing
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 12px;
+  --spacing-4: 16px;
+  --spacing-5: 20px;
+  --spacing-6: 24px;
+  --spacing-7: 28px;
+  --spacing-8: 32px;
+  --spacing-9: 36px;
+  --spacing-10: 40px;
+  --spacing-11: 44px;
+  --spacing-12: 48px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black);
+  font-family: "Arimo", sans-serif;
+
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.resumePage {
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  padding: 22px 30px 22px;
+}
+

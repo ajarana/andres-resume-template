@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Roboto, Roboto_Mono } from "next/font/google";
-import "./globals.css";
+import { Arimo, Roboto_Mono } from "next/font/google";
+import "./globals.scss";
 
-const roboto = Roboto({
+const roboto = Arimo({
   subsets: ["latin"],
-  variable: "--font-roboto",
+  variable: "--font-arimo",
 });
 
 const robotoMono = Roboto_Mono({

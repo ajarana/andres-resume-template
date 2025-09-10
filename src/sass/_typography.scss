@@ -1,0 +1,59 @@
+@use 'sass:list';
+
+// 11pt = 14.66px
+// 12pt = 16px
+// 13pt = 17.33px
+// 14pt = 18.66px
+// 15pt = 20px
+// 16pt = 21.33px
+// 17pt = 22.66px
+// 18pt = 24px
+
+$font-sizes: (12px, 14px, 16px, 18px, 20px, 24px, 30px, 35px, 45px, 60px, 72px);
+
+$line-heights: (16px, 20px, 24px, 28px, 28px, 32px, 36px, 40px, 1, 1, 1);
+
+@mixin generate-text-size($ind) {
+  font-size: list.nth($font-sizes, $ind);
+  line-height: list.nth($line-heights, $ind);
+}
+
+@mixin text-size-1 {
+  @include generate-text-size(1);
+}
+
+@mixin text-size-2 {
+  @include generate-text-size(2);
+}
+
+@mixin text-size-3 {
+  @include generate-text-size(3);
+}
+
+@mixin text-size-4 {
+  @include generate-text-size(4);
+}
+
+@mixin text-size-5 {
+  @include generate-text-size(5);
+}
+
+@mixin text-size-6 {
+  @include generate-text-size(6);
+}
+
+@mixin text-size-7 {
+  @include generate-text-size(7);
+}
+
+@mixin text-size-8 {
+  @include generate-text-size(8);
+}
+
+@mixin text-size-9 {
+  @include generate-text-size(9);
+}
+
+@mixin text-size-10 {
+  @include generate-text-size(10);
+}

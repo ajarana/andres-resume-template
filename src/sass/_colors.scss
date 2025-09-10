@@ -1,0 +1,31 @@
+@use "sass:color";
+
+// Color palette: https://coolors.co/527bcb-b9c7f3-e8edde-cc001b-0c1618
+
+$lightness-delta: -15%;
+
+// Glaucous
+$color-1: hsl(220, 54%, 56%);
+$color-1-dark: color.scale($color-1, $lightness: $lightness-delta);
+
+// Lavender Blue
+$color-2: hsl(226, 71%, 92%);
+$color-2-dark: color.scale($color-2, $lightness: $lightness-delta);
+
+// Beige
+$color-3: hsl(81, 28%, 90%);
+$color-3-dark: color.scale($color-3, $lightness: $lightness-delta);
+
+// Carnelian
+$color-4: hsl(352, 100%, 44%);
+$color-4-dark: color.scale($color-4, $lightness: $lightness-delta);
+
+// Jet
+$color-5: hsl(0, 0%, 20%);
+$color-5-dark: color.scale($color-5, $lightness: $lightness-delta);
+
+$color-6: #082f49;
+
+$blue: #1976d2;
+$blue-light: color.scale($blue, $lightness: 45%);
+$blue-dark: color.scale($blue, $lightness: -15%);

@@ -1,0 +1,11 @@
+@use "sass:color";
+
+$lightness-delta: 25%;
+
+@function fixed-darken($color) {
+  @return color.scale($color, $lightness: -$lightness-delta);
+}
+
+@function fixed-lighten($color) {
+  @return color.scale($color, $lightness: $lightness-delta);
+}
