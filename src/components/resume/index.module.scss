@@ -5,17 +5,59 @@
 @use 'sass:list';
 
 .resume {
+  $heading-text-sizes: (32px, 20px, 17px, 14px);
+  $line-height: 1.15;
+  $h2-spacing: 14px;
+  $h3-spacing: 20px;
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  li,
+  p {
+    line-height: $line-height;
+  }
+
+  p,
+  li,
+  a {
+    font-size: list.nth($heading-text-sizes, 4);
+  }
+
+  h2 {
+    font-size: list.nth($heading-text-sizes, 2);
+    margin-bottom: $h2-spacing;
+  }
+
   header {
+    h1 {
+      text-align: center;
+      font-size: list.nth($heading-text-sizes, 1);
+      line-height: 0.8;
+      font-weight: 600;
+    }
+
     .contactInformation {
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      flex-wrap: wrap;
+      margin-top: 12px;
+      justify-content: center;
 
       li {
-        display: grid;
-        align-items: center;
+        display: inline-flex;
+
+        &:first-child {
+          &:after {
+            display: inline-block;
+            content: "";
+            position: relative;
+            width: 1px;
+            height: 16px;
+            background-color: var(--gray);
+            margin: 0 12px;
+          }
+        }
 
         svg
         {
@@ -24,13 +66,21 @@
           justify-self: center;
         }
       }
+
+      .contactInnerWrapper {
+        display: inline-grid;
+        grid-template-columns: max-content 1fr;
+        gap: 6px;
+        align-items: center;
+      }
     }
   }
 
   .resumeSection {
+    margin-top: 26px;
+
     h2 {
       display: flex;
-      flex-wrap: nowrap;
       align-items: center;
       color: var(--color-4);
 
@@ -44,94 +94,9 @@
       }
     }
 
-    .accomplishmentHeader {
-      display: flex;
-      flex-direction: column;
-
-      .separator {
-        color: var(--dark-gray);
-      }
-    }
-  }
-
-  .skillGroup {
-    h3 {
-      flex: 0 0 auto;
-      display: inline;
-    }
-
-    .skillListContainer {
-      display: inline;
-      position: relative;
-      overflow: hidden;
-
-      .skillList {
-        display: inline;
-        position: relative;
-        list-style: none;
-        padding: 0;
-
-        li {
-          display: inline;
-          margin: 0;
-
-          &:before {
-            content: "";
-            display: inline-block;
-            position: relative;
-            background-color: var(--gray);
-          }
-        }
-      }
-    }
-  }
-
-  .accomplishment {
-    h4 {
-      font-weight: normal;
-    }
-
-    .verticalList {
-      list-style: none;
-
-      li {
-        position: relative;
-
-        &:before {
-          content: "";
-          display: inline-block;
-          border-radius: 10%;
-          background-color: var(--dark-gray);
-          
-          position: absolute;
-        }
-      }
-    }
-  }
-
-  @media print, (min-width: layout.$breakpoint-desktop) {
-    header {
-      .contactInformation {
-        flex-direction: row;
-        justify-content: space-around;
-      }
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .skillGroup {
-      grid-template-columns: 130px 1fr;
-    }
-
     .accomplishment {
-      h3 {
-        margin-bottom: 0;
-      }
-
       .accomplishmentHeader {
-        flex-direction: row;
+        display: flex;
         justify-content: space-between;
         align-items: center;
       }
@@ -140,206 +105,66 @@
         padding-left: 12px;
       }
     }
+  }
 
-    &.printMediaType {
-      $heading-text-sizes: (32px, 20px, 17px, 14px);
-      $line-height: 1.15;
-      $h2-spacing: 14px;
-      $h3-spacing: 20px;
+  .skillGroup {
+    &:not(:last-child) {
+      margin-bottom: var(--spacing-3);
+    }
 
-      padding: 0;
-      margin: 0;
+    h3 {
+      font-size: list.nth($heading-text-sizes, 4);
+      display: inline;
+    }
 
-      h2,
-      h3,
-      h4,
-      h5,
-      h6,
-      li,
-      p {
-        line-height: $line-height;
-      }
+    .skillListContainer {
+      display: inline;
 
-      p,
-      li,
-      a {
-        font-size: list.nth($heading-text-sizes, 4);
-      }
+      .skillList {
+        display: inline;
 
-      header {
-        margin-bottom: 0;
-
-        .contactInformation {
-          margin-top: 12px;
-          justify-content: center;
-
-          .contactInnerWrapper {
-            display: inline-grid;
-            grid-template-columns: max-content 1fr;
-            gap: 6px;
-            align-items: center;
-          }
-
-          li {
-            grid-template-columns: max-content 1fr;
-            display: inline-flex;
-
-            &:first-child {
-              &:after {
-                display: inline-block;
-                content: "";
-                position: relative;
-                width: 1px;
-                height: 16px;
-                background-color: var(--gray);
-                margin: 0 12px;
-              }
-            }
-          }
-        }
-      }
-
-      h1 {
-        font-size: list.nth($heading-text-sizes, 1);
-        line-height: 0.8;
-        margin: 0;
-        font-weight: 600;
-      }
-
-      h2 {
-        font-size: list.nth($heading-text-sizes, 2);
-        margin-bottom: $h2-spacing;
-      }
-
-      h3 {
-        font-size: list.nth($heading-text-sizes, 3);
-      }
-
-      .resumeSection {
-        margin-top: 26px;
-      }
-
-      .skillGroup {
-        $divider-width: 1px;
-        $divider-height: 8px;
-        $divider-margin: 8px;
-
-        &:not(:last-child) {
-          margin-bottom: 8px;
-        }
-
-        h3 {
-          font-size: list.nth($heading-text-sizes, 4);
-        }
-      }
-
-      .accomplishment {
-        &:not(:last-child) {
-          margin-bottom: $h3-spacing;
-        }
-
-        h3 {
-          font-size: list.nth($heading-text-sizes, 3);
-        }
-
-        h4 {
-          font-size: list.nth($heading-text-sizes, 4);
-          margin-top: 4px;
-        }
-
-        p {
-          margin: 0;
-        }
-
-        .accomplishmentHeader {
-          margin: 0 0 4px;
-        }
-
-        .verticalList {
-          $diameter: 4px;
-
-          li {
-            margin: 8px 0 0;
-
-            &:before {
-              width: $diameter;
-              height: 1px;
-              top: 7px;
-              left: -12px;
-            }
-
-            &:not(:last-child) {
-              margin-bottom: var(--spacing-2);
-            }
-          }
+        li {
+          display: inline;
         }
       }
     }
+  }
 
-    &:not(.printMediaType) {
-      border: 1px solid var(--light-gray);
-      border-radius: var(--border-radius-1);
-      box-shadow: var(--box-shadow-1);
-      padding: var(--spacing-12);
-      margin: var(--spacing-6) 0 0;
+  .accomplishment {
+    &:not(:last-child) {
+      margin-bottom: $h3-spacing;
+    }
 
-      h1 {
-        margin-top: 0;
-      }
+    h3 {
+      font-size: list.nth($heading-text-sizes, 3);
+    }
 
-      h2 {
-        @include typography.text-size-7;
-      }
+    h4 {
+      font-weight: normal;
+      font-size: list.nth($heading-text-sizes, 4);
+    }
 
-      header {
-        margin: 0 0 var(--spacing-12);
-      }
+    .accomplishmentHeader {
+      margin: 0 0 4px;
+    }
 
-      .resumeSection {
-        margin-top: var(--spacing-12);
-      }
+    .verticalList {
+      $diameter: 4px;
+      list-style: none;
 
-      .skillGroup {
-        $divider-width: 1px;
-        $divider-height: 12px;
-        $divider-margin: 8px;
+      li {
+        margin: var(--spacing-3) 0 0;
+        position: relative;
 
-        h3 {
-          @include typography.text-size-4;
-        }
-      }
-
-      .accomplishment {
-        margin-top: var(--spacing-6);
-
-        h3 {
-          @include typography.text-size-6;
-
-          margin: 0;
-        }
-
-        h4 {
-          @include typography.text-size-4;
-        }
-
-        .accomplishmentHeader {
-          margin: 0 0 var(--spacing-2);
-
-          p {
-            margin: 0;
-          }
-        }
-
-        .verticalList {
-          $diameter: 5px;
-
-          li {
-            &:before {
-              width: $diameter;
-              height: $diameter;
-              top: 11px;
-            }
-          }
+        &:before {
+          content: "";
+          border-radius: 10%;
+          background-color: var(--dark-gray);
+          position: absolute;
+          width: $diameter;
+          height: 1px;
+          top: 7px;
+          left: -12px;
         }
       }
     }
