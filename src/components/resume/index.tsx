@@ -141,7 +141,7 @@ const Resume = (props: ResumeProps) => {
         <h2>Education</h2>
 
         <>
-          {degrees.map(({ name, startDate, endDate, schoolName }) => (
+          {degrees.map(({ name, endDate, schoolName }) => (
             <section
               key={name}
               className={styles.accomplishment}
@@ -149,7 +149,7 @@ const Resume = (props: ResumeProps) => {
               <section className={styles.accomplishmentHeader}>
                 <h3>{name}</h3>
 
-                <p>{startDate} <span className={styles.separator}>-</span> {endDate}</p>
+                <p>{endDate}</p>
               </section>
 
               <h4>{schoolName}</h4>

@@ -21,7 +21,6 @@ interface PersonalProject {
 
 interface AcademicDegree {
   name: string;
-  startDate: string;
   endDate: string;
   schoolName: string;
 }
