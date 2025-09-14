@@ -8,7 +8,7 @@ import {
 import classNames from "classnames/bind";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "./index.module.scss";
-import { useEffect } from "react";
+import { Fragment, useEffect } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -31,11 +31,10 @@ const Resume = (props: ResumeProps) => {
   } = props;
 
   const skillSections = skillLists.map(({ category, skills }) => {
-    const listItems = skills.map((skill, i) => {
+    const listItems = skills.map((skill) => {
       return (
       <li key={skill}>
         {skill}
-        {i !== skills.length - 1 && ',\u00A0'}
       </li>);
     });
 

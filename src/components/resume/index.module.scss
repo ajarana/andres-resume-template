@@ -125,6 +125,10 @@
 
         li {
           display: inline;
+
+          &:not(:last-child):after {
+            content: ", "
+          }
         }
       }
     }
