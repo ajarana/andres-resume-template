@@ -47,7 +47,7 @@
       li {
         display: inline-flex;
 
-        &:first-child {
+        &:not(:last-child) {
           &:after {
             display: inline-block;
             content: "";
@@ -158,17 +158,16 @@
 
       li {
         margin: var(--spacing-3) 0 0;
-        position: relative;
+        display: flex;
 
         &:before {
           content: "";
           border-radius: 10%;
           background-color: var(--dark-gray);
-          position: absolute;
           width: $diameter;
           height: 1px;
-          top: 7px;
-          left: -12px;
+          margin: 7px 8px 0 -12px;
+          flex: 0 0 auto;
         }
       }
     }
