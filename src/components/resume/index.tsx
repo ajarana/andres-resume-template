@@ -4,11 +4,12 @@ import { Candidate } from "../../types/Candidate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faEnvelope,
+  faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames/bind";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "./index.module.scss";
-import { Fragment, useEffect } from "react";
+import { useEffect } from "react";
 
 const cx = classNames.bind(styles);
 
@@ -23,6 +24,7 @@ const Resume = (props: ResumeProps) => {
       name,
       email,
       websites,
+      location,
       skillLists,
       previousJobs,
       degrees,
@@ -83,6 +85,14 @@ const Resume = (props: ResumeProps) => {
               <span>{websites[0]}</span>
             </span>
           </li>
+          {process.env.NEXT_PUBLIC_USE_LOCATION === "true" && 
+            <li>
+              <span className={styles.contactInnerWrapper}>
+                <FontAwesomeIcon icon={faLocationDot} widthAuto />
+                <span>{location}</span>
+              </span>
+            </li>
+          }
         </ul>
       </header>
 
