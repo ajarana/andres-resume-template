@@ -24,3 +24,11 @@ Initially, this project will use mock data from `/src/data/mock-data.ts`. In ord
 
 1. Create an `.env` file in the project root and set the `NEXT_PUBLIC_USE_REAL_DATA` environment variable to `true`.
 2. Create a file called `candidate-data.ts` in `src/data`. Use `mock-data.ts` as a template.
+
+## Feature Flags
+
+Feature flags are controlled using environment variables defined in your `.env` file.
+
+| Environment variable         | Description           | 
+| ---------------------------- | --------------------- |
+| `NEXT_PUBLIC_USE_LOCATION`   |  Controls whether location information is shown in the UI. Set to `true` to show location details. |
