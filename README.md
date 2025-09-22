@@ -16,7 +16,9 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project has [Fast Refresh](https://nextjs.org/docs/architecture/fast-refresh) enabled by default.
+
+Run `npm run dev:typecheck` in order to run the Next.js dev server and TypeScript type-checker (`tsc`) concurrently. As of `9.4.x`, [Next.js will only check types at `next build`](https://github.com/vercel/next.js/discussions/33634), so this command is a workaround to catch type errors more easily during development. You can also run `npm run typecheck` to perform a one-time type check.
 
 ## Template Data
 

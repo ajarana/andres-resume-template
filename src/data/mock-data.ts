@@ -58,7 +58,6 @@ export const CANDIDATE_INFO: Candidate = {
   degrees: [
     {
       name: "Ward of House Arryn",
-      startDate: "270 AC",
       endDate: "278 AC",
       schoolName: "The Eyrie, Vale of Arryn",
     },

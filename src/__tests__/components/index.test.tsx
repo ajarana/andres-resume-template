@@ -24,13 +24,15 @@ const candidate: Candidate = {
       startDate: "Sept 2020",
       endDate: "Present",
       company: "Michelin",
-      responsibilities: ["Cooking delicious food.", "Managing a team of 3 chefs."],
+      responsibilities: [
+        "Cooking delicious food.",
+        "Managing a team of 3 chefs.",
+      ],
     },
   ],
   degrees: [
     {
       name: "Bachelor of Arts in Culinary Arts",
-      startDate: "Sept 2013",
       endDate: "May 2016",
       schoolName: "Culinary Arts Academy Switzerland",
     },
@@ -50,7 +52,7 @@ test("renders all headings", () => {
         accum.push(company);
 
         return accum;
-      }, [])
+      }, []),
     )
     .concat(degrees.map(({ name }) => name));
 
@@ -68,9 +70,10 @@ test("renders all lists", () => {
 
   const verifyList = (list: string[], hasSeparator: boolean): void => {
     list.forEach((item, ind) => {
-      const formattedItem = (ind < list.length - 1 && hasSeparator) ? item + "," : item;
+      const formattedItem =
+        ind < list.length - 1 && hasSeparator ? item + "," : item;
       const listElement = screen.getByText(formattedItem);
-        
+
       expect(listElement).toBeInTheDocument();
     });
   };

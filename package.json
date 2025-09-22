@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "typecheck": "tsc --noEmit --incremental --preserveWatchOutput --pretty",
     "dev": "next dev --turbopack",
+    "dev:typecheck": "concurrently --names \"next dev\",tsc --prefix-colors magenta,cyan \"npm run dev\" \"npm run typecheck -- --watch\"",
     "build": "next build --turbopack",
     "start": "next start",
     "test": "jest",
@@ -33,6 +35,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "concurrently": "^9.2.1",
     "eslint": "^9.35.0",
     "eslint-config-next": "^15.5.2",
     "eslint-config-prettier": "^10.1.8",
