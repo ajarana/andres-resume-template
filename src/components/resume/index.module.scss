@@ -2,7 +2,7 @@
 @use "../../sass/layout";
 @use "../../sass/colors";
 @use "../../sass/functions";
-@use 'sass:list';
+@use "sass:list";
 
 .resume {
   $heading-text-sizes: (32px, 20px, 17px, 14px);
@@ -59,8 +59,7 @@
           }
         }
 
-        svg
-        {
+        svg {
           color: var(--gray);
           margin-top: 2px;
           justify-self: center;
@@ -127,7 +126,7 @@
           display: inline;
 
           &:not(:last-child):after {
-            content: ", "
+            content: ", ";
           }
         }
       }

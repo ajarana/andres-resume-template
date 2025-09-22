@@ -10,7 +10,7 @@ const roboto = Arimo({
 const robotoMono = Roboto_Mono({
   subsets: ["latin"],
   variable: "--font-roboto-mono",
-})
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,9 +24,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${roboto.variable} ${robotoMono.variable} antialiased`}
-      >
+      <body className={`${roboto.variable} ${robotoMono.variable} antialiased`}>
         {children}
       </body>
     </html>

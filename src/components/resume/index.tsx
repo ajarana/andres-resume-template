@@ -1,11 +1,8 @@
-'use client';
+"use client";
 
 import { Candidate } from "../../types/Candidate";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faEnvelope,
-  faLocationDot,
-} from "@fortawesome/free-solid-svg-icons";
+import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import classNames from "classnames/bind";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import styles from "./index.module.scss";
@@ -34,17 +31,11 @@ const Resume = (props: ResumeProps) => {
 
   const skillSections = skillLists.map(({ category, skills }) => {
     const listItems = skills.map((skill) => {
-      return (
-      <li key={skill}>
-        {skill}
-      </li>);
+      return <li key={skill}>{skill}</li>;
     });
 
     return (
-      <section
-        key={category}
-        className={styles.skillGroup}
-      >
+      <section key={category} className={styles.skillGroup}>
         <h3>{category}:&nbsp;</h3>
 
         <div className={styles.skillListContainer}>
@@ -60,10 +51,10 @@ const Resume = (props: ResumeProps) => {
 
   useEffect(() => {
     window.addEventListener("beforeprint", () => {
-      document.title="andres-arana_front-end"
+      document.title = "andres-arana_front-end";
     });
     window.addEventListener("afterprint", () => {
-      document.title="Andres Arana | Front-End Developer"
+      document.title = "Andres Arana | Front-End Developer";
     });
   });
 
@@ -85,14 +76,14 @@ const Resume = (props: ResumeProps) => {
               <span>{websites[0]}</span>
             </span>
           </li>
-          {process.env.NEXT_PUBLIC_USE_LOCATION === "true" && 
+          {process.env.NEXT_PUBLIC_USE_LOCATION === "true" && (
             <li>
               <span className={styles.contactInnerWrapper}>
                 <FontAwesomeIcon icon={faLocationDot} widthAuto />
                 <span>{location}</span>
               </span>
             </li>
-          }
+          )}
         </ul>
       </header>
 
@@ -117,14 +108,14 @@ const Resume = (props: ResumeProps) => {
               responsibilities,
             }) => {
               return (
-                <section
-                  key={id}
-                  className={styles.accomplishment}
-                >
+                <section key={id} className={styles.accomplishment}>
                   <section className={styles.accomplishmentHeader}>
                     <h3>{jobTitle}</h3>
-                
-                    <p>{startDate} <span className={styles.separator}>-</span> {endDate}</p>
+
+                    <p>
+                      {startDate} <span className={styles.separator}>-</span>{" "}
+                      {endDate}
+                    </p>
                   </section>
 
                   <h4 className={styles.companyInfo}>
@@ -141,7 +132,7 @@ const Resume = (props: ResumeProps) => {
                   </ul>
                 </section>
               );
-            }
+            },
           )}
         </>
       </section>
@@ -151,10 +142,7 @@ const Resume = (props: ResumeProps) => {
 
         <>
           {degrees.map(({ name, endDate, schoolName }) => (
-            <section
-              key={name}
-              className={styles.accomplishment}
-            >
+            <section key={name} className={styles.accomplishment}>
               <section className={styles.accomplishmentHeader}>
                 <h3>{name}</h3>
 

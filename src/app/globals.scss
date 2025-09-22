@@ -32,10 +32,8 @@
 
   // Misc.
   --border-radius-1: 3px;
-  --box-shadow-1: 2px 2px 5px 1px #{color.scale(
-      colors.$color-5,
-      $lightness: 80%
-    )};
+  --box-shadow-1: 2px 2px 5px 1px
+    #{color.scale(colors.$color-5, $lightness: 80%)};
   --container-width-1: 1100px;
 
   // Spacing
@@ -70,4 +68,3 @@ body {
   box-sizing: border-box;
   padding: 22px;
 }
-
