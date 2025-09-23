@@ -68,21 +68,19 @@ test("renders all headings", () => {
 test("renders all lists", () => {
   render(<Resume candidate={candidate} />);
 
-  const verifyList = (list: string[], hasSeparator: boolean): void => {
-    list.forEach((item, ind) => {
-      const formattedItem =
-        ind < list.length - 1 && hasSeparator ? item + "," : item;
-      const listElement = screen.getByText(formattedItem);
+  const verifyList = (list: string[]): void => {
+    list.forEach((item) => {
+      const listElement = screen.getByText(item);
 
       expect(listElement).toBeInTheDocument();
     });
   };
 
   candidate.skillLists.forEach(({ skills }) => {
-    verifyList(skills, true);
+    verifyList(skills);
   });
 
   candidate.previousJobs.forEach(({ responsibilities }) => {
-    verifyList(responsibilities, false);
+    verifyList(responsibilities);
   });
 });

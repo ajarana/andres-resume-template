@@ -1,0 +1,23 @@
+@use "../../sass/typography";
+@use "sass:list";
+
+.resumeSection {
+  margin-top: 26px;
+
+  h2 {
+    display: flex;
+    align-items: center;
+    color: var(--color-4);
+    font-size: list.nth(typography.$heading-text-sizes, 2);
+    margin-bottom: 14px;
+
+    &:after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      display: block;
+      background: var(--light-gray);
+      margin-left: var(--spacing-9);
+    }
+  }
+}

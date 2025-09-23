@@ -1,0 +1,46 @@
+@use "../../sass/typography";
+@use "sass:list";
+
+.resumeHeader {
+  h1 {
+    text-align: center;
+    font-size: list.nth(typography.$heading-text-sizes, 1);
+    line-height: 0.8;
+    font-weight: 600;
+  }
+
+  .contactInformation {
+    display: flex;
+    margin-top: 12px;
+    justify-content: center;
+
+    li {
+      display: inline-flex;
+
+      &:not(:last-child) {
+        &:after {
+          display: inline-block;
+          content: "";
+          position: relative;
+          width: 1px;
+          height: 16px;
+          background-color: var(--gray);
+          margin: 0 12px;
+        }
+      }
+
+      svg {
+        color: var(--gray);
+        margin-top: 2px;
+        justify-self: center;
+      }
+    }
+
+    .contactInnerWrapper {
+      display: inline-grid;
+      grid-template-columns: max-content 1fr;
+      gap: 6px;
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,45 @@
+@use "../../sass/typography";
+@use "sass:list";
+
+.accomplishment {
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  h3 {
+    font-size: list.nth(typography.$heading-text-sizes, 3);
+  }
+
+  h4 {
+    font-weight: normal;
+    font-size: list.nth(typography.$heading-text-sizes, 4);
+  }
+
+  .accomplishmentHeader {
+    margin: 0 0 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .verticalList {
+    $diameter: 4px;
+    padding-left: 12px;
+    list-style: none;
+
+    li {
+      margin: var(--spacing-3) 0 0;
+      display: flex;
+
+      &:before {
+        content: "";
+        border-radius: 10%;
+        background-color: var(--dark-gray);
+        width: $diameter;
+        height: 1px;
+        margin: 7px 8px 0 -12px;
+        flex: 0 0 auto;
+      }
+    }
+  }
+}

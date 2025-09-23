@@ -1,9 +1,9 @@
-interface SkillList {
+export interface SkillList {
   category: string;
   skills: string[];
 }
 
-interface Job {
+export interface Job {
   id: number;
   jobTitle: string;
   startDate: string;
@@ -13,13 +13,13 @@ interface Job {
   responsibilities: string[];
 }
 
-interface PersonalProject {
+export interface PersonalProject {
   name: string;
   datesActive: string;
   description: string;
 }
 
-interface AcademicDegree {
+export interface AcademicDegree {
   name: string;
   endDate: string;
   schoolName: string;

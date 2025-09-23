@@ -1,0 +1,29 @@
+@use "../../sass/typography";
+@use "sass:list";
+
+.skillGroup {
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-3);
+  }
+
+  h3 {
+    font-size: list.nth(typography.$heading-text-sizes, 4);
+    display: inline;
+  }
+
+  .skillListContainer {
+    display: inline;
+
+    .skillList {
+      display: inline;
+
+      li {
+        display: inline;
+
+        &:not(:last-child):after {
+          content: ", ";
+        }
+      }
+    }
+  }
+}
