@@ -1,24 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This resume template project was bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
 
-First, run the development server:
+Install dependencies via `npm install` and run the development server using `npm run dev` or `npm run dev:typecheck`.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Use `npm run dev:typecheck` in order to run the Next.js dev server and TypeScript type-checker (`tsc`) concurrently. As of `9.4.x`, [Next.js will only check types at `next build`](https://github.com/vercel/next.js/discussions/33634), so this command is a workaround to catch type errors more easily during development. You can also run `npm run typecheck` to perform a one-time type check.
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 This project has [Fast Refresh](https://nextjs.org/docs/architecture/fast-refresh) enabled by default.
-
-Run `npm run dev:typecheck` in order to run the Next.js dev server and TypeScript type-checker (`tsc`) concurrently. As of `9.4.x`, [Next.js will only check types at `next build`](https://github.com/vercel/next.js/discussions/33634), so this command is a workaround to catch type errors more easily during development. You can also run `npm run typecheck` to perform a one-time type check.
 
 ## Template Data
 
