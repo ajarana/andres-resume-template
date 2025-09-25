@@ -64,7 +64,24 @@ body {
 }
 
 .resumePage {
-  margin: 0 auto;
   box-sizing: border-box;
-  padding: 22px;
+  margin: 40px auto;
+  padding: 42px;
+  max-width: 762px;
+  border: 1px solid var(--color-3-dark);
+}
+
+@media print {
+  @page {
+    margin: 0.625in;
+    size: letter;
+    page-orientation: upright;
+  }
+
+  .resumePage {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    border: none;
+  }
 }
