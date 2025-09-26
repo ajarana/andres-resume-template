@@ -37,6 +37,10 @@ const candidate: Candidate = {
       schoolName: "Culinary Arts Academy Switzerland",
     },
   ],
+  metadata: {
+    webPageTitle: "John Smith | Executive Chef",
+    pdfPageTitle: "john-smith_executive-chef",
+  },
 };
 
 test("renders all headings", () => {

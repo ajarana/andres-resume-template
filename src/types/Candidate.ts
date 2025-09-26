@@ -34,4 +34,8 @@ export interface Candidate {
   previousJobs: Job[];
   personalProjects?: PersonalProject[];
   degrees: AcademicDegree[];
+  metadata: {
+    webPageTitle: string;
+    pdfPageTitle: string;
+  };
 }

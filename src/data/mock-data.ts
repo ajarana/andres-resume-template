@@ -62,4 +62,8 @@ export const CANDIDATE_INFO: Candidate = {
       schoolName: "The Eyrie, Vale of Arryn",
     },
   ],
+  metadata: {
+    webPageTitle: "Robert Baratheon | King of the Seven Kingdoms",
+    pdfPageTitle: "robert-baratheon_king-of-the-seven-kingdoms",
+  },
 };
