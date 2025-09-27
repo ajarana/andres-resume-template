@@ -1,6 +1,6 @@
-import { Job } from "@/types/Candidate";
-import ResumeSection from "../resume-section";
-import ResumeSectionItem from "../resume-section-item";
+import { Job } from "@/types/candidate";
+import ResumeSection from "../resume-section/resume-section";
+import ResumeSectionItem from "../resume-section-item/resume-section-item";
 
 interface WorkExperienceSectionProps {
   previousJobs: Job[];

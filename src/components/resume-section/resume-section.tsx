@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "./resume-section.module.scss";
 
 interface ResumeSectionProps {
   title: string;

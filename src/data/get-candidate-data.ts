@@ -1,4 +1,4 @@
-import { Candidate } from "../types/Candidate";
+import { Candidate } from "../types/candidate";
 
 const path =
   process.env.NEXT_PUBLIC_USE_REAL_DATA === "true" ?

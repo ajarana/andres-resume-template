@@ -1,4 +1,4 @@
-import styles from "./index.module.scss";
+import styles from "./resume-section-item.module.scss";
 
 interface ResumeSectionItemProps {
   sectionItemHeader: React.ReactNode;

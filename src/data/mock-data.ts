@@ -1,4 +1,4 @@
-import { Candidate } from "../types/Candidate";
+import { Candidate } from "../types/candidate";
 
 export const CANDIDATE_INFO: Candidate = {
   name: "Robert Baratheon",

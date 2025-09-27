@@ -1,10 +1,10 @@
-import { Candidate } from "../../types/Candidate";
+import { Candidate } from "../../types/candidate";
 import classNames from "classnames/bind";
-import styles from "./index.module.scss";
-import TemplateHeader from "../template-header";
-import SkillsSection from "../skills-section";
-import WorkExperienceSection from "../work-experience-section";
-import EducationSection from "../education-section";
+import styles from "./resume.module.scss";
+import TemplateHeader from "../template-header/template-header";
+import SkillsSection from "../skills-section/skills-section";
+import WorkExperienceSection from "../work-experience-section/work-experience-section";
+import EducationSection from "../education-section/education-section";
 
 const cx = classNames.bind(styles);
 

@@ -1,6 +1,6 @@
-import { SkillList } from "@/types/Candidate";
-import styles from "./index.module.scss";
-import ResumeSection from "../resume-section";
+import { SkillList } from "@/types/candidate";
+import styles from "./skills-section.module.scss";
+import ResumeSection from "../resume-section/resume-section";
 
 interface SkillsSectionProps {
   skillLists: SkillList[];

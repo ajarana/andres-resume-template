@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { DOCUMENT_TITLES } from "@/constants/documentTitles";
+import { DOCUMENT_TITLES } from "@/constants/document-titles";
 
 const PrintTitleEffect = () => {
   useEffect(() => {

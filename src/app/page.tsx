@@ -1,5 +1,5 @@
-import Resume from "@/components/resume";
-import { CANDIDATE_INFO } from "@/data";
+import Resume from "@/components/resume/resume";
+import { CANDIDATE_INFO } from "@/data/get-candidate-data";
 
 export default function App() {
   return (

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
-import { Candidate } from "../../types/Candidate";
-import Resume from "@/components/resume";
+import { Candidate } from "../../types/candidate";
+import Resume from "@/components/resume/resume";
 
 const candidate: Candidate = {
   name: "John Smith",

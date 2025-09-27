@@ -1,5 +1,5 @@
-import { Candidate } from "@/types/Candidate";
-import styles from "./index.module.scss";
+import { Candidate } from "@/types/candidate";
+import styles from "./template-header.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";

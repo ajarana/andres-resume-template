@@ -1,6 +1,6 @@
-import { AcademicDegree } from "@/types/Candidate";
-import ResumeSection from "../resume-section";
-import ResumeSectionItem from "../resume-section-item";
+import { AcademicDegree } from "@/types/candidate";
+import ResumeSection from "../resume-section/resume-section";
+import ResumeSectionItem from "../resume-section-item/resume-section-item";
 
 interface EducationSectionProps {
   degrees: AcademicDegree[];

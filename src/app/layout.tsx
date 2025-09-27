@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Arimo, Roboto_Mono } from "next/font/google";
 import "./globals.scss";
-import PrintTitleEffect from "@/components/utils/PrintTitleEffect";
-import { DOCUMENT_TITLES } from "@/constants/documentTitles";
+import PrintTitleEffect from "@/components/utils/print-title-effect";
+import { DOCUMENT_TITLES } from "@/constants/document-titles";
 
 const roboto = Arimo({
   subsets: ["latin"],
