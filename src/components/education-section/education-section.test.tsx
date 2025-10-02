@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { Candidate } from "@/types/candidate";
 import EducationSection from "./education-section";
-import { getTestCandidateData } from "@/../tests/utils/get-test-candidate-data";
-import { verifyList } from "@/../tests/utils/verify-list";
+import { getTestCandidateData } from "@/tests/utils/get-test-candidate-data";
+import { verifyList } from "@/tests/utils/verify-list";
 
 const candidate: Candidate = getTestCandidateData();
 

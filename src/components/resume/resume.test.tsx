@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import Resume from "@/components/resume/resume";
-import { verifyList } from "@/../tests/utils/verify-list";
-import { getTestCandidateData } from "@/../tests/utils/get-test-candidate-data";
+import { verifyList } from "@/tests/utils/verify-list";
+import { getTestCandidateData } from "@/tests/utils/get-test-candidate-data";
 
 const candidate = getTestCandidateData();
 
