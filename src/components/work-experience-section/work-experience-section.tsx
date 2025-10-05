@@ -22,30 +22,17 @@ const WorkExperienceSection = ({
             companyAdditionalInfo,
             responsibilities,
           }) => {
-            const sectionItemHeader = (
-              <>
-                <h3>{jobTitle}</h3>{" "}
-                <p>
-                  {startDate} <span>-</span> {endDate}
-                </p>
-              </>
-            );
-            const sectionItemSubheader = (
-              <h4>
-                {company}&nbsp;
-                {companyAdditionalInfo && <span>{companyAdditionalInfo}</span>}
-              </h4>
-            );
-            const verticalList = responsibilities.map((responsibility, i) => (
-              <li key={i}>{responsibility}</li>
-            ));
-
             return (
               <ResumeSectionItem
                 key={id}
-                sectionItemHeader={sectionItemHeader}
-                sectionItemSubheader={sectionItemSubheader}
-                verticalList={verticalList}
+                heading={jobTitle}
+                subheading={company}
+                {...(companyAdditionalInfo && {
+                  subheadingAdditionalInfo: companyAdditionalInfo,
+                })}
+                startDate={startDate}
+                endDate={endDate}
+                listItems={responsibilities}
               />
             );
           },

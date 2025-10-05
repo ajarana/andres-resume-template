@@ -11,19 +11,12 @@ const EducationSection = ({ degrees }: EducationSectionProps) => {
     <ResumeSection title={"Education"}>
       <>
         {degrees.map(({ name, endDate, schoolName }) => {
-          const sectionItemHeader = (
-            <>
-              <h3>{name}</h3>
-              <p>{endDate}</p>
-            </>
-          );
-          const sectionItemSubheader = <h4>{schoolName}</h4>;
-
           return (
             <ResumeSectionItem
               key={name}
-              sectionItemHeader={sectionItemHeader}
-              sectionItemSubheader={sectionItemSubheader}
+              heading={name}
+              subheading={schoolName}
+              endDate={endDate}
             />
           );
         })}

@@ -1,23 +1,50 @@
 import styles from "./resume-section-item.module.scss";
 
 export interface ResumeSectionItemProps {
-  sectionItemHeader: React.ReactNode;
-  sectionItemSubheader: React.ReactNode;
-  verticalList?: React.ReactNode;
+  heading: string;
+  subheading: string;
+  subheadingAdditionalInfo?: string;
+  startDate?: string;
+  endDate: string;
+  listItems?: string[];
 }
 
 const ResumeSectionItem = ({
-  sectionItemHeader,
-  sectionItemSubheader,
-  verticalList,
+  heading,
+  subheading,
+  subheadingAdditionalInfo,
+  startDate,
+  endDate,
+  listItems,
 }: ResumeSectionItemProps) => {
+  const dates = (
+    <p>
+      {startDate && `${startDate} - `}
+      {endDate}
+    </p>
+  );
+
   return (
     <section className={styles.accomplishment}>
-      <div className={styles.accomplishmentHeader}>{sectionItemHeader}</div>
+      <div className={styles.accomplishmentHeader}>
+        <h3>{heading}</h3>
+        {dates}
+      </div>
 
-      {sectionItemSubheader}
+      <h4>
+        {subheading}
+        {subheadingAdditionalInfo && (
+          <span>{` ${subheadingAdditionalInfo}`}</span>
+        )}
+      </h4>
 
-      {verticalList && <ul className={styles.verticalList}>{verticalList}</ul>}
+      {listItems && (
+        <ul className={styles.verticalList}>
+          {listItems.map((item, i) => {
+            return <li key={i}>{item}</li>;
+          })}
+        </ul>
+      )}
     </section>
   );
 };
