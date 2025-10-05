@@ -1,6 +1,6 @@
 import styles from "./resume-section-item.module.scss";
 
-interface ResumeSectionItemProps {
+export interface ResumeSectionItemProps {
   sectionItemHeader: React.ReactNode;
   sectionItemSubheader: React.ReactNode;
   verticalList?: React.ReactNode;
