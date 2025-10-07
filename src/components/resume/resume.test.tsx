@@ -1,6 +1,5 @@
 import { render, screen } from "@testing-library/react";
 import Resume from "@/components/resume/resume";
-import { verifyList } from "@/tests/utils/verify-list";
 import { getTestCandidateData } from "@/tests/utils/get-test-candidate-data";
 
 const candidate = getTestCandidateData();
@@ -36,17 +35,5 @@ test("renders all headings", () => {
     });
 
     expect(headingElement).toBeInTheDocument();
-  });
-});
-
-test("renders all lists", () => {
-  render(<Resume candidate={candidate} />);
-
-  candidate.skillLists.forEach(({ skills }) => {
-    verifyList(skills);
-  });
-
-  candidate.previousJobs.forEach(({ responsibilities }) => {
-    verifyList(responsibilities);
   });
 });

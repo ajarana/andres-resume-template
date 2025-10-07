@@ -1,6 +1,6 @@
 import { screen } from "@testing-library/react";
 
-export const verifyList = (list: string[]): void => {
+export const verifyListItemsExist = (list: string[]): void => {
   list.forEach((item) => {
     const listElement = screen.getByText(item);
 

@@ -2,7 +2,7 @@ import { render, screen } from "@testing-library/react";
 import { Candidate } from "@/types/candidate";
 import EducationSection from "./education-section";
 import { getTestCandidateData } from "@/tests/utils/get-test-candidate-data";
-import { verifyList } from "@/tests/utils/verify-list";
+import { verifyListItemsExist } from "@/tests/utils/verify-list";
 
 const candidate: Candidate = getTestCandidateData();
 
@@ -25,5 +25,5 @@ test("renders all headings", () => {
 test("renders all degree names", () => {
   render(<EducationSection degrees={candidate.degrees} />);
 
-  verifyList(candidate.degrees.map(({ name }) => name));
+  verifyListItemsExist(candidate.degrees.map(({ name }) => name));
 });
