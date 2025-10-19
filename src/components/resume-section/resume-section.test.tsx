@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import ResumeSection from "./resume-section";
 
-test("ResumeSection renders a header and children", () => {
+test("ResumeSection renders its header and children", () => {
   const title = "Personal Projects";
   const childContent = "Child Content";
 

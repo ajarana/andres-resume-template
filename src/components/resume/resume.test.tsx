@@ -5,7 +5,7 @@ import { SECTION_HEADINGS } from "@/constants/section-headings";
 
 const candidate = getTestCandidateData();
 
-test("renders all headings", () => {
+test("renders all section headings", () => {
   render(<Resume candidate={candidate} />);
 
   const { name } = candidate;

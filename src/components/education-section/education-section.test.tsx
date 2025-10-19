@@ -6,12 +6,12 @@ import { verifyListItemsExist } from "@/tests/utils/verify-list";
 
 const candidate: Candidate = getTestCandidateData();
 
-test("renders all headings", () => {
+test("renders all degree names", () => {
   render(<EducationSection degrees={candidate.degrees} />);
 
   const { degrees } = candidate;
 
-  const headingNames = ["Education"].concat(degrees.map(({ name }) => name));
+  const headingNames = degrees.map(({ name }) => name);
 
   headingNames.forEach((headingName) => {
     const headingElement = screen.getByRole("heading", {
@@ -22,8 +22,8 @@ test("renders all headings", () => {
   });
 });
 
-test("renders all degree names", () => {
+test("renders all school names", () => {
   render(<EducationSection degrees={candidate.degrees} />);
 
-  verifyListItemsExist(candidate.degrees.map(({ name }) => name));
+  verifyListItemsExist(candidate.degrees.map(({ schoolName }) => schoolName));
 });

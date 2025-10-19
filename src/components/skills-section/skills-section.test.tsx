@@ -18,7 +18,7 @@ const renderComponent = () => {
   return render(<SkillsSection skillLists={skillLists} />);
 };
 
-test("Renders SkillsSection headings", () => {
+test("Renders skills section categories", () => {
   renderComponent();
 
   const headings = skillLists.map((skillList) => skillList.category);
@@ -31,7 +31,7 @@ test("Renders SkillsSection headings", () => {
   });
 });
 
-test("Renders SkillsSection skill lists", () => {
+test("Renders skill lists", () => {
   renderComponent();
 
   const allSkills = skillLists.flatMap((skillList) => skillList.skills);
