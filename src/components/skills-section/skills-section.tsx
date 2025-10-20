@@ -1,6 +1,7 @@
 import { SkillList } from "@/types/candidate";
 import styles from "./skills-section.module.scss";
 import ResumeSection from "../resume-section/resume-section";
+import { SECTION_HEADINGS } from "@/constants/section-headings";
 
 interface SkillsSectionProps {
   skillLists: SkillList[];
@@ -23,7 +24,11 @@ const SkillsSection = ({ skillLists }: SkillsSectionProps) => {
     );
   });
 
-  return <ResumeSection title={"Skills"}>{skillSections}</ResumeSection>;
+  return (
+    <ResumeSection title={SECTION_HEADINGS.SKILLS}>
+      {skillSections}
+    </ResumeSection>
+  );
 };
 
 export default SkillsSection;

@@ -3,38 +3,40 @@ import SkillsSection from "./skills-section";
 import { SkillList } from "@/types/candidate";
 import { verifyListItemsExist } from "@/tests/utils/verify-list";
 
-const skillLists: SkillList[] = [
-  {
-    category: "Cooking",
-    skills: ["French Cuisine", "Italian Cuisine", "Peruvian Cuisine"],
-  },
-  {
-    category: "Baking",
-    skills: ["Brownies", "Cakes", "Cookies"],
-  },
-];
+describe("SkillsSection", () => {
+  const skillLists: SkillList[] = [
+    {
+      category: "Cooking",
+      skills: ["French Cuisine", "Italian Cuisine", "Peruvian Cuisine"],
+    },
+    {
+      category: "Baking",
+      skills: ["Brownies", "Cakes", "Cookies"],
+    },
+  ];
 
-const renderComponent = () => {
-  return render(<SkillsSection skillLists={skillLists} />);
-};
+  const renderComponent = () => {
+    return render(<SkillsSection skillLists={skillLists} />);
+  };
 
-test("Renders SkillsSection headings", () => {
-  renderComponent();
+  test("renders skills section categories", () => {
+    renderComponent();
 
-  const headings = skillLists.map((skillList) => skillList.category);
+    const headings = skillLists.map((skillList) => skillList.category);
 
-  headings.forEach((heading) => {
-    screen.getByRole("heading", {
-      name: heading + ":",
-      level: 3,
+    headings.forEach((heading) => {
+      screen.getByRole("heading", {
+        name: heading + ":",
+        level: 3,
+      });
     });
   });
-});
 
-test("Renders SkillsSection skill lists", () => {
-  renderComponent();
+  test("renders skill lists", () => {
+    renderComponent();
 
-  const allSkills = skillLists.flatMap((skillList) => skillList.skills);
+    const allSkills = skillLists.flatMap((skillList) => skillList.skills);
 
-  verifyListItemsExist(allSkills);
+    verifyListItemsExist(allSkills);
+  });
 });

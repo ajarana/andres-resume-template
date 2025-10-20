@@ -1,6 +1,7 @@
 import { AcademicDegree } from "@/types/candidate";
 import ResumeSection from "../resume-section/resume-section";
 import ResumeSectionItem from "../resume-section-item/resume-section-item";
+import { SECTION_HEADINGS } from "@/constants/section-headings";
 
 interface EducationSectionProps {
   degrees: AcademicDegree[];
@@ -8,7 +9,7 @@ interface EducationSectionProps {
 
 const EducationSection = ({ degrees }: EducationSectionProps) => {
   return (
-    <ResumeSection title={"Education"}>
+    <ResumeSection title={SECTION_HEADINGS.EDUCATION}>
       <>
         {degrees.map(({ name, endDate, schoolName }) => {
           return (
