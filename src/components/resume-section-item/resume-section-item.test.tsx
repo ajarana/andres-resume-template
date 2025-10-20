@@ -40,6 +40,21 @@ describe("ResumeSectionItem", () => {
     expect(subheaderElement).toBeInTheDocument();
   });
 
+  test("renders subheading additional info if present", () => {
+    const subheadingAdditionalInfo = "(Remote)";
+
+    renderComponent({
+      subheadingAdditionalInfo,
+    });
+
+    const subheaderElement = screen.getByRole("heading", {
+      name: `${subheading} ${subheadingAdditionalInfo}`,
+      level: 4,
+    });
+
+    expect(subheaderElement).toBeInTheDocument();
+  });
+
   test("does not render a list if listItems is absent", () => {
     renderComponent();
 
