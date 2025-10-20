@@ -3,58 +3,60 @@ import ResumeSectionItem, {
   ResumeSectionItemProps,
 } from "./resume-section-item";
 
-const heading = "Game Developer";
-const subheading = "Nintendo";
+describe("ResumeSectionItem", () => {
+  const heading = "Game Developer";
+  const subheading = "Nintendo";
 
-const renderComponent = (overrides?: Partial<ResumeSectionItemProps>) => {
-  return render(
-    <ResumeSectionItem
-      heading={heading}
-      subheading={subheading}
-      endDate={"May 2016"}
-      {...overrides}
-    />,
-  );
-};
+  const renderComponent = (overrides?: Partial<ResumeSectionItemProps>) => {
+    return render(
+      <ResumeSectionItem
+        heading={heading}
+        subheading={subheading}
+        endDate={"May 2016"}
+        {...overrides}
+      />,
+    );
+  };
 
-test("ResumeSection renders its heading", () => {
-  renderComponent();
+  test("renders its heading", () => {
+    renderComponent();
 
-  const headerElement = screen.getByRole("heading", {
-    name: heading,
-    level: 3,
+    const headerElement = screen.getByRole("heading", {
+      name: heading,
+      level: 3,
+    });
+
+    expect(headerElement).toBeInTheDocument();
   });
 
-  expect(headerElement).toBeInTheDocument();
-});
+  test("renders its subheading", () => {
+    renderComponent();
 
-test("ResumeSection renders its subheading", () => {
-  renderComponent();
+    const subheaderElement = screen.getByRole("heading", {
+      name: subheading,
+      level: 4,
+    });
 
-  const subheaderElement = screen.getByRole("heading", {
-    name: subheading,
-    level: 4,
+    expect(subheaderElement).toBeInTheDocument();
   });
 
-  expect(subheaderElement).toBeInTheDocument();
-});
+  test("does not render a list if listItems is absent", () => {
+    renderComponent();
 
-test("ResumeSection does not render a list if listItems is absent", () => {
-  renderComponent();
+    const listElement = screen.queryByRole("list");
 
-  const listElement = screen.queryByRole("list");
-
-  expect(listElement).not.toBeInTheDocument();
-});
-
-test("ResumeSection renders a list if listItems is present", () => {
-  const listItems = ["Mario", "Ring Fit"];
-
-  renderComponent({
-    listItems,
+    expect(listElement).not.toBeInTheDocument();
   });
 
-  const listElement = screen.getByRole("list");
+  test("renders a list if listItems is present", () => {
+    const listItems = ["Mario", "Ring Fit"];
 
-  expect(listElement).toBeInTheDocument();
+    renderComponent({
+      listItems,
+    });
+
+    const listElement = screen.getByRole("list");
+
+    expect(listElement).toBeInTheDocument();
+  });
 });

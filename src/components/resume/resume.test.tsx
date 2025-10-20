@@ -5,23 +5,25 @@ import { SECTION_HEADINGS } from "@/constants/section-headings";
 
 const candidate = getTestCandidateData();
 
-test("renders all section headings", () => {
-  render(<Resume candidate={candidate} />);
+describe("Resume", () => {
+  test("renders all section headings", () => {
+    render(<Resume candidate={candidate} />);
 
-  const { name } = candidate;
+    const { name } = candidate;
 
-  const sectionHeadings = [
-    name,
-    SECTION_HEADINGS.SKILLS,
-    SECTION_HEADINGS.WORK_EXPERIENCE,
-    SECTION_HEADINGS.EDUCATION,
-  ];
+    const sectionHeadings = [
+      name,
+      SECTION_HEADINGS.SKILLS,
+      SECTION_HEADINGS.WORK_EXPERIENCE,
+      SECTION_HEADINGS.EDUCATION,
+    ];
 
-  sectionHeadings.forEach((headingName) => {
-    const headingElement = screen.getByRole("heading", {
-      name: headingName,
+    sectionHeadings.forEach((headingName) => {
+      const headingElement = screen.getByRole("heading", {
+        name: headingName,
+      });
+
+      expect(headingElement).toBeInTheDocument();
     });
-
-    expect(headingElement).toBeInTheDocument();
   });
 });
